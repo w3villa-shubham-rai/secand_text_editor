@@ -61,15 +61,14 @@ class _MyScreenState extends State<MyScreen> {
               padding: const EdgeInsets.all(8.0),
               child: Ink(
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
+                    borderRadius: BorderRadius.circular(5),
                     border: Border.all(color: Colors.black, width: 1)
                 ),
                 child: Column(
                   children: [
                     ConstrainedBox(
                       constraints: BoxConstraints(maxHeight: 277),
-                      child: SizedBox(
-                        height: 400,
+                      child: SizedBox(                       
                         child: Stack(
                           fit: StackFit.expand,
                           children: [
@@ -78,14 +77,14 @@ class _MyScreenState extends State<MyScreen> {
                               child: QuillEditor.basic(                              
                                 configurations: QuillEditorConfigurations(
                                   padding: const EdgeInsets.all(20),
-                                  showCursor: true,
-                      
+                                  showCursor: true,                                  
                                   scrollable: true,
                                   onTapOutside: (event, focusNode) {
                                     debugPrint("OutSide Tracked");
                                   },
                                   controller: quillController,
                                   readOnly: false,
+                                  
                                 ),
                               ),
                             ),
@@ -137,67 +136,64 @@ class _MyScreenState extends State<MyScreen> {
                       ),
                     ),
                      SizedBox(height: 30),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 3,right: 3,bottom: 3),
-                        child: QuillToolbar(
-                              configurations:   const QuillToolbarConfigurations(
-                              
-                              ),
-                               child: SingleChildScrollView(
-                                 scrollDirection: Axis.horizontal,
-                                 child: Row(
-                                   children: [                                   
-                                     QuillToolbarToggleStyleButton(                                      
-                                       options: const QuillToolbarToggleStyleButtonOptions(),
-                                       controller: quillController,
-                                       attribute: Attribute.bold,                                      
-                                       
-                                     ),
-                                     QuillToolbarToggleStyleButton(
-                                       options: const QuillToolbarToggleStyleButtonOptions(),
-                                       controller: quillController,
-                                       attribute: Attribute.italic,
-                                     ),
-                                     QuillToolbarToggleStyleButton(
-                                       controller: quillController,
-                                       attribute: Attribute.underline,
-                                     ),
-                                     QuillToolbarClearFormatButton(
-                                       controller: quillController,
-                                       options: const QuillToolbarClearFormatButtonOptions(),
-                                      
-                                     ),                                 
+                      QuillToolbar(
+                            configurations:   const QuillToolbarConfigurations(
+                            
+                            ),
+                             child: SingleChildScrollView(
+                               scrollDirection: Axis.horizontal,
+                               child: Row(
+                                 children: [                                   
+                                   QuillToolbarToggleStyleButton(                                      
+                                     options: const QuillToolbarToggleStyleButtonOptions(),
+                                     controller: quillController,
+                                     attribute: Attribute.bold,                                      
+                                     
+                                   ),
+                                   QuillToolbarToggleStyleButton(
+                                     options: const QuillToolbarToggleStyleButtonOptions(),
+                                     controller: quillController,
+                                     attribute: Attribute.italic,
+                                   ),
+                                   QuillToolbarToggleStyleButton(
+                                     controller: quillController,
+                                     attribute: Attribute.underline,
+                                   ),
+                                   QuillToolbarClearFormatButton(
+                                     controller: quillController,
+                                     options: const QuillToolbarClearFormatButtonOptions(),
                                     
-                                     QuillToolbarToggleStyleButton(
-                                       controller: quillController,
-                                       attribute: Attribute.ol,
-                                     ),
-                                     QuillToolbarToggleStyleButton(
-                                       controller: quillController,
-                                       attribute: Attribute.ul,
-                                     ),
-                                     QuillToolbarToggleStyleButton(
-                                       controller: quillController,
-                                       attribute: Attribute.inlineCode,
-                                     ),
-                                     QuillToolbarToggleStyleButton(
-                                       controller: quillController,
-                                       attribute: Attribute.blockQuote,
-                                     ),
-                                     QuillToolbarIndentButton(
-                                       controller: quillController,
-                                       isIncrease: true,
-                                     ),
-                                     QuillToolbarIndentButton(
-                                       controller: quillController,
-                                       isIncrease: false,
-                                     ),
-                                     QuillToolbarLinkStyleButton(controller: quillController),
-                                   ],
-                                 ),
+                                   ),                                 
+                                  
+                                   QuillToolbarToggleStyleButton(
+                                     controller: quillController,
+                                     attribute: Attribute.ol,
+                                   ),
+                                   QuillToolbarToggleStyleButton(
+                                     controller: quillController,
+                                     attribute: Attribute.ul,
+                                   ),
+                                   QuillToolbarToggleStyleButton(
+                                     controller: quillController,
+                                     attribute: Attribute.inlineCode,
+                                   ),
+                                   QuillToolbarToggleStyleButton(
+                                     controller: quillController,
+                                     attribute: Attribute.blockQuote,
+                                   ),
+                                   QuillToolbarIndentButton(
+                                     controller: quillController,
+                                     isIncrease: true,
+                                   ),
+                                   QuillToolbarIndentButton(
+                                     controller: quillController,
+                                     isIncrease: false,
+                                   ),
+                                   QuillToolbarLinkStyleButton(controller: quillController),
+                                 ],
                                ),
-                                            ),
-                      )
+                             ),
+                                          )
                   ],
                 ),
               ),
